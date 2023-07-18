@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1sm2cavmdgf0"]
+
+[ext_resource type="PackedScene" path="res://platform.tscn" id="2_pw4vr"]
+[ext_resource type="PackedScene" uid="uid://ch83qlo8f2iub" path="res://gate.tscn" id="3_471er"]
+[ext_resource type="PackedScene" uid="uid://b5m8o4lse50ne" path="res://ball.tscn" id="4_5bdnf"]
+[ext_resource type="Script" path="res://RightPlatform.gd" id="5_0ut5t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rjqa0"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_1emfa"]
+font_size = 128
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fa8my"]
+size = Vector2(1069, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttted"]
+size = Vector2(1039.5, 133.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25g36"]
+size = Vector2(134.5, 774.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7udfd"]
+size = Vector2(128.938, 769.5)
+
+[node name="Game" type="Node"]
+
+[node name="Characters" type="Node2D" parent="."]
+position = Vector2(0, -232)
+
+[node name="Left Platform" parent="Characters" instance=ExtResource("2_pw4vr")]
+position = Vector2(80, 616)
+collision_layer = 15
+collision_mask = 15
+
+[node name="lg" parent="Characters" instance=ExtResource("3_471er")]
+position = Vector2(16, 616)
+collision_layer = 15
+collision_mask = 15
+
+[node name="Ball" parent="Characters" instance=ExtResource("4_5bdnf")]
+position = Vector2(512, 616)
+collision_layer = 2
+collision_mask = 2
+
+[node name="rg" parent="Characters" instance=ExtResource("3_471er")]
+position = Vector2(1008, 616)
+collision_layer = 15
+collision_mask = 15
+
+[node name="Right Platform" parent="Characters" instance=ExtResource("2_pw4vr")]
+position = Vector2(944, 616)
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("5_0ut5t")
+
+[node name="Left2" type="Label" parent="Characters"]
+offset_left = 417.5
+offset_top = 232.0
+offset_right = 490.5
+offset_bottom = 410.0
+size_flags_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_rjqa0")
+
+[node name="Label" type="Label" parent="Characters"]
+offset_left = 494.5
+offset_top = 232.0
+offset_right = 529.5
+offset_bottom = 410.0
+size_flags_horizontal = 4
+text = ":"
+label_settings = SubResource("LabelSettings_1emfa")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Right2" type="Label" parent="Characters"]
+offset_left = 533.5
+offset_top = 232.0
+offset_right = 606.5
+offset_bottom = 410.0
+text = "0"
+label_settings = SubResource("LabelSettings_rjqa0")
+
+[node name="Top" type="StaticBody2D" parent="."]
+position = Vector2(512, -32)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(9.5, -8)
+shape = SubResource("RectangleShape2D_fa8my")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(512, 832)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(0, 2.625)
+shape = SubResource("RectangleShape2D_ttted")
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(-64, 384)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(0, 3.25)
+shape = SubResource("RectangleShape2D_25g36")
+
+[node name="Right" type="StaticBody2D" parent="."]
+position = Vector2(1088, 384)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(-0.46875, 0)
+shape = SubResource("RectangleShape2D_7udfd")

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://byxdlwct522vl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rjqa0"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_1emfa"]
+font_size = 128
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cont" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.5
+offset_right = 94.5
+offset_bottom = 178.0
+grow_horizontal = 2
+
+[node name="Left" type="Label" parent="Cont"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_rjqa0")
+
+[node name="Label" type="Label" parent="Cont"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = ":"
+label_settings = SubResource("LabelSettings_1emfa")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Right" type="Label" parent="Cont"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_rjqa0")

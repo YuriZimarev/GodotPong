@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch83qlo8f2iub"]
+
+[ext_resource type="Texture2D" uid="uid://b8r1ulr8f5d4g" path="res://assets/GatePong.png" id="1_mks3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs470"]
+size = Vector2(32, 128)
+
+[node name="Left Gate" type="CharacterBody2D"]
+slide_on_ceiling = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.0625, 4)
+texture = ExtResource("1_mks3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vs470")

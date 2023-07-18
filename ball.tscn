@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5m8o4lse50ne"]
+
+[ext_resource type="Texture2D" uid="uid://cwtolob25mgyc" path="res://assets/BallPong.png" id="1_hw7vb"]
+[ext_resource type="Script" path="res://ball.gd" id="1_xp43h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gliw4"]
+size = Vector2(33.5, 32)
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_xp43h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_hw7vb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gliw4")
