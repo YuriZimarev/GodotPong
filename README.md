@@ -6,3 +6,7 @@
 ## Результат
 https://github.com/YuriZimarev/GodotPong/assets/66843393/8fd2580a-076e-4afe-b571-1baa26777b55
 
+##TODO  
+- Сделать полный экран
+- Сделать авторасширение счета
+
