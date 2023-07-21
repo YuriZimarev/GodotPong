@@ -15,14 +15,14 @@ func _physics_process(delta):
 		#check for goals #проверяем на голы
 		if collision.get_collider().get_name()=="lg":
 			self.global_position=Vector2(576,320)
-			p1_score += 1
+			p2_score += 1
 			var lc=get_node("../Left2")
-			lc.text=str(p1_score)
+			lc.text=str(p2_score)
 		elif collision.get_collider().get_name()=="rg":
 			self.global_position=Vector2(576,320)
-			p2_score += 1
+			p1_score += 1
 			var rc=get_node("../Right2")
-			rc.text=str(p2_score)
+			rc.text=str(p1_score)
 			
 			
 	
